@@ -53,7 +53,7 @@ leftForm.addEventListener("submit", function(e) {
 })
 
 function render() {
-    createElement(leftLists)
+    clearElement(leftLists)
     renderlists()
     const selectedList = lists.find(list => list.id === selectedlistsId)
     if (selectedlistsId === null) {
@@ -99,8 +99,15 @@ function renderTodos(selectedList) {
     })
 }
 
+function createList(list) {
+    return {
+        id: new Date().getTime().toString(),
+        list,
+        tasks = []
+    }
+}
 
-function createElement(leftLists) {
+function clearElement(leftLists) {
     while (leftLists.firstElementChild) {
         leftLists.removeChild(leftLists.firstElementChild)
     }
