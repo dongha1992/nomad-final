@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.first-page {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    color: white;
+}
+
+#first-input {
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-bottom: 1px solid white !important;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.auto-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.auto {
+    position: relative;
+    font-size: 45px;
+}
+
+.auto::before {
+    content: "";
+    height: 40px;
+    width: 2px;
+    position: absolute;
+    right: -10px;
+    top: 5px;
+    background-color: white;
+    animation: blink 1s infinite ease;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: 'VT323', monospace;
+    background-image: url("img/img1.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    min-width: 100vw;
+    position: relative;
+}
+
+.delete {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.delete:hover {
+    color: brown;
+}
+
+.container {}
+
+header {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    color: white;
+}
+
+header h1 {
+    opacity: 0.5;
+    font-size: 40px;
+}
+
+header span {
+    padding: 20px;
+}
+
+main {
+    height: 100vh;
+    padding-top: 150px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+main .left {
+    padding-right: 20px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+main .left .left-wrap {
+    padding-top: 10px;
+    background-color: white
+}
+
+main .left .left-wrap .user-span {
+    text-align: center;
+    font-size: 30px;
+}
+
+.active-list {
+    font-weight: 800;
+    color: black;
+    font-size: 20px;
+}
+
+main .left .left-wrap .left-content .left-content-lists {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    list-style: circle;
+    padding: 20px 5px;
+    color: gray;
+    background-color: white;
+}
+
+main .left .left-wrap .left-content .left-content-lists .left-content-list {
+    padding: 10px 5px;
+    overflow: scroll;
+    cursor: pointer;
+    display: flex;
+}
+
+.left-content-list:hover {
+    opacity: 0.7;
+}
+
+main .left .left-wrap .left-input {
+    width: 100%;
+    border-bottom: 1px solid black !important;
+    padding: 10px 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+main .left .left-wrap .left-input input {
+    padding: 10px 0px;
+    background: none;
+    border-bottom: 1px solid black !important;
+    border: none;
+    outline: none;
+}
+
+main .right {
+    min-width: 50%;
+}
+
+main .right .right-wrap {
+    max-width: 600px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+main .right .right-wrap .right-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+}
+
+main .right .right-wrap .right-header .right-header-todo {
+    font-size: 20px;
+    align-self: center;
+}
+
+main .right .right-wrap .right-header .right-header-count {
+    font-size: 10px;
+    align-self: center;
+}
+
+main .right .right-wrap .right-content .right-content-lists {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 20px 0px;
+}
+
+main .right .right-wrap .right-content {
+    padding: 0px 20px;
+}
+
+main .right .right-wrap .right-content .right-content-lists .right-content-list {
+    padding: 10px 0px;
+}
+
+[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.right-content-list label {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.right-content-list {
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.right-content-list::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5em;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.1;
+    right: 0;
+    left: 0;
+}
+
+.custom-checkbox {
+    --size: 10px;
+    width: var(--size);
+    height: var(--size);
+    margin-right: var(--size);
+    display: inline-block;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 300ms ease-in-out;
+}
+
+.right-content-list:hover .custom-checkbox,
+[type="checkbox"]:focus+label .custom-checkbox {
+    transform: scale(1.2);
+    color: gray;
+}
+
+[type="checkbox"]:checked+label .custom-checkbox {
+    box-shadow: inset 0 0 0px 2px white;
+    background: black;
+    border-color: black;
+}
+
+[type="checkbox"]:checked+label {
+    opacity: 0.5;
+}
+
+.right-content-list label::after {
+    content: "";
+    position: absolute;
+    background: black;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 200ms ease-in-out;
+}
+
+[type="checkbox"]:checked+label::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+main .right .right-wrap .right-input {
+    padding: 5px 40px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+main .right .right-wrap .right-input input {
+    padding: 10px 0px;
+    background: none;
+    border-bottom: 1px solid black !important;
+    border: none;
+    outline: none;
+}
+
+.delete-stuff {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50px;
+    color: white;
+}
+
+.btn {
+    font-size: 20px;
+    cursor: pointer;
+    background: 0;
+    border: 0;
+    padding: 0;
+    color: inherit;
+}

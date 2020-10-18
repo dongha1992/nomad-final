@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" i ntegrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>To-Do List</title>
+</head>
+
+<body>
+    <div class="first-page">
+        <div class="auto-wrap">
+            <div class="auto"></div>
+        </div>
+        <form class="once">
+            <input type="text" id="first-input">
+        </form>
+    </div>
+    <div class="container">
+        <header>
+            <span class="weather"></span>
+            <h1 class="title">DO-TO-LIST</h1>
+            <span class="time"></span>
+        </header>
+        <main>
+            <section class="left">
+                <div class="left-wrap">
+                    <div class="user-span"><span class="user-name"></span> Lists</div>
+
+                    <div class="left-content">
+                        <ul class="left-content-lists" data-left-lists>
+
+                        </ul>
+                    </div>
+                    <form action="" class="left-input" data-lists-user-form>
+                        <input type="text" class="left-submit" data-lists-user-input>
+                    </form>
+                </div>
+
+            </section>
+            <section class="right">
+                <div class="right-wrap" data-todo-display>
+                    <div class="right-header">
+                        <span class="right-header-todo" data-todo-title></span>
+                        <div class="right-header-count" data-todo-count></div>
+                    </div>
+                    <div class="right-content">
+                        <div class="right-content-lists" data-todo-lists>
+
+                        </div>
+                    </div>
+                    <form action="" class="right-input" data-todo-form>
+                        <input type="text" class="right-submit" data-todo-input/>
+                    </form>
+                </div>
+                <div class="delete-stuff">
+                    <button class="btn delete" data-list-delete>Delete list</button>
+                    <button class="btn delete" data-todo-delete>Clear completed tasks</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <template id="todo-template">
+        <div class="right-content-list">
+            <input type="checkbox">
+            <label>
+                <span class="custom-checkbox">
+                </span>
+            </label>
+                            </div>
+                            </template>
+
+</body>
+<script src="index.js"></script>
+<script src="clock.js"></script>
+<script src="background.js"></script>
+<script src="greeting.js"></script>
+<script src="weather.js"></script>
+
+
+
+</html>
