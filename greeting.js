@@ -67,7 +67,7 @@ function greeting() {
                 container.style.display = ""
                 firstInput.disabled = true
 
-            }, 1000)
+            }, 2000)
         }
 
     } else {
