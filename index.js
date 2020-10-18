@@ -46,9 +46,9 @@ leftLists.addEventListener("click", function(e) {
 leftForm.addEventListener("submit", function(e) {
     e.preventDefault()
     let listName = leftInput.value
-    let list = createList(listName)
+    let listElement = createList(listName)
     leftInput.value = ""
-    lists.push(list)
+    lists.push(listElement)
     saveAndRender()
 })
 
@@ -99,11 +99,11 @@ function renderTodos(selectedList) {
     })
 }
 
-function createList(list) {
+function createList(listElement) {
     return {
         id: new Date().getTime().toString(),
-        list,
-        tasks = []
+        list: listElement,
+        tasks: []
     }
 }
 
@@ -111,7 +111,7 @@ function createTodo(todo) {
     return {
         id: new Date().getTime().toString(),
         todo,
-        complete = false
+        complete: false
     }
 }
 
