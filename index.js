@@ -107,6 +107,14 @@ function createList(list) {
     }
 }
 
+function createTodo(todo) {
+    return {
+        id: new Date().getTime().toString(),
+        todo,
+        complete = false
+    }
+}
+
 function clearElement(leftLists) {
     while (leftLists.firstElementChild) {
         leftLists.removeChild(leftLists.firstElementChild)
